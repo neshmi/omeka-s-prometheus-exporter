@@ -1,0 +1,12 @@
+services:
+  omkea_exporter:
+    build: .
+    ports:
+      - "9145:9145"
+    environment:
+      OMEKA_API_URL: https://omeka-test.omeka.net/api
+      OMEKA_KEY_IDENTITY: key # generate from the user page
+      OMEKA_KEY_CREDENTIAL: credential # generate from the user page
+      PORT: "9145"
+      DEBUG: false
+    restart: unless-stopped
